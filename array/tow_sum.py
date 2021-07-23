@@ -14,6 +14,7 @@
 输入：nums = [3,3], target = 6
 输出：[0,1]
 """
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -23,15 +24,17 @@ class Solution(object):
         """
         # 理解题目：从题目中语句"请你在该数组中找出和为目标值target的那两个整数，数组中同一个元素在答案里不能重复出现"
         # 可以看出列表是没有重复值的
-        # 1. 创建字典，a:将列表中值为key, 索引作为值保存到字典中（为何值作为key，个人理解方便根据值快速获取索引）
-        #   b. 字典类型查询快
+        # 1. 创建字典，a:将列表中值为key, 索引作为值保存到字典中（为何值作为key，方便根据值快速获取索引，如果索引作为key，
+        # 就很难快速根据值获取索引）b. 字典类型查询快
         dict = {}
         # 2. 遍历列表, 
         # enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，
         # 一般用在 for 循环当中
         for index, num in enumerate(nums):
-            # 关键点1：
+            # 关键点1：拿到配对值, 可以不定义couple变量，但定义该变量程序可读性更好，并可减少target - num的重复计算
             couple = target - num
+            # 判断字典中键是否存在：pyton3中支持key in dict 或者 key in dict.keys()
+            # python2中dict.has_key(key)
             if couple in dict:
                 # 当前遍历元素的索引是index，已遍历过的元素存储在dict中，类似于左侧查找配对元素
                 return [dict[couple], index] 
