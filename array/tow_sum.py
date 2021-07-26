@@ -14,7 +14,7 @@
 输入：nums = [3,3], target = 6
 输出：[0,1]
 """
-
+# 方法1（最优解）：字典遍历单循环
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -32,14 +32,15 @@ class Solution(object):
         # 一般用在 for 循环当中
         for index, num in enumerate(nums):
             # 关键点1：拿到配对值, 可以不定义couple变量，但定义该变量程序可读性更好，并可减少target - num的重复计算
-            couple = target - num
+            couple = target - num # 也可以不定义couple，在后面用到couple的地方用target - num替换
             # 判断字典中键是否存在：pyton3中支持key in dict 或者 key in dict.keys()
             # python2中dict.has_key(key)
             if couple in dict:
                 # 当前遍历元素的索引是index，已遍历过的元素存储在dict中，类似于左侧查找配对元素
                 return [dict[couple], index] 
-            else:
-                dict[num] = index 
+            else: # 也可以不加else关键字，直接下面这行
+                dict[num] = index
+            return [] # 加返回结果类型校验时，补上这行更完美 
 
 """
 leetcode上执行结果：
@@ -48,4 +49,31 @@ leetcode上执行结果：
 同样的代码提交第二次：
 执行用时：12 ms, 在所有 Python 提交中击败了98.45%的用户
 内存消耗：13.4 MB, 在所有 Python 提交中击败了64.12%的用户
+
+本解法涉及到的知识点：字典、enumerate、遍历列表中的值和索引（区别与js的地方）、字典中判断key存在的方法
+"""
+
+# 方法2：列表暴力双循环
+class Solution: 
+    # 易错点：注意List而不是list
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # nums_len = nums.len()
+        nums_len = len(nums) # 易错点
+        # range的用法：左闭右开, 并注意索引的起始位置
+        for i in range(nums_len):
+            for j in range(i + 1, nums_len): # 易错点：结束位置不是nums_len+1
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+        return []
+
+"""
+leetcode上执行结果：
+执行用时：3240 ms, 在所有 Python3 提交中击败了20.34%的用户
+内存消耗：15.3 MB, 在所有 Python3 提交中击败了40.79%的用户
+
+注意事项：leetcode上会有让选择python还是python3的编译器，该解法选择python3，需要注意py3定义
+类、方法与py2的不同点；py中计算数组长度是len(nums), 而不是nums.len(); 注意遍历的时候索引不能
+越界
+关键点：参考注意事项
+易错点：参考注意事项
 """
