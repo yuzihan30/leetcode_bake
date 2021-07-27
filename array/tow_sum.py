@@ -34,7 +34,7 @@ class Solution(object):
             # 关键点1：拿到配对值, 可以不定义couple变量，但定义该变量程序可读性更好，并可减少target - num的重复计算
             couple = target - num # 也可以不定义couple，在后面用到couple的地方用target - num替换
             # 判断字典中键是否存在：pyton3中支持key in dict 或者 key in dict.keys()
-            # python2中dict.has_key(key)
+            # python2中有dict.has_key(key)，该方法在py3中已丢弃
             if couple in dict:
                 # 当前遍历元素的索引是index，已遍历过的元素存储在dict中，类似于左侧查找配对元素
                 return [dict[couple], index] 
@@ -50,7 +50,11 @@ leetcode上执行结果：
 执行用时：12 ms, 在所有 Python 提交中击败了98.45%的用户
 内存消耗：13.4 MB, 在所有 Python 提交中击败了64.12%的用户
 
-本解法涉及到的知识点：字典、enumerate、遍历列表中的值和索引（区别与js的地方）、字典中判断key存在的方法
+步骤：参考代码注释
+注意事项：遍历列表中的索引和值（区别与js的地方）
+关键点：定义字典，遍历
+易错点：参考注意事项
+涉及知识点：字典、enumerate、遍历列表中的索引和值（区别与js的地方）、字典中判断key存在的方法
 """
 
 # 方法2：列表暴力双循环
@@ -58,8 +62,11 @@ class Solution:
     # 易错点：注意List而不是list
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # nums_len = nums.len()
+        # 1.计算数组长度
         nums_len = len(nums) # 易错点
-        # range的用法：左闭右开, 并注意索引的起始位置
+        # range的用法：左闭右开, 并注意索引的起始位置；np.arange也是左闭右开，
+        # 支持float, 返回array
+        # 2.双层遍历
         for i in range(nums_len):
             for j in range(i + 1, nums_len): # 易错点：结束位置不是nums_len+1
                 if nums[i] + nums[j] == target:
@@ -71,9 +78,11 @@ leetcode上执行结果：
 执行用时：3240 ms, 在所有 Python3 提交中击败了20.34%的用户
 内存消耗：15.3 MB, 在所有 Python3 提交中击败了40.79%的用户
 
+步骤：参考代码注释
 注意事项：leetcode上会有让选择python还是python3的编译器，该解法选择python3，需要注意py3定义
 类、方法与py2的不同点；py中计算数组长度是len(nums), 而不是nums.len(); 注意遍历的时候索引不能
 越界
 关键点：参考注意事项
 易错点：参考注意事项
+涉及知识点：py3中的类型校验；range方法生成列表
 """
