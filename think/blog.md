@@ -25,3 +25,6 @@
 
 #### 2021年8月4号
 1. 互联网最核心的技术岗位在推荐、搜索、广告岗
+
+#### 2021年8月24号
+排查之后发现：this.$router.push 带query参数的话，字符串路径和对像路径传的时候，字符串路径加查询参数有效，但对象路径中path里如果有查询参数会不识别。比如this.$router.push('/register?plan=private')中查询参数生效，但this.$router.push({path: '/register?plan=private'})中?plan=private不生效
