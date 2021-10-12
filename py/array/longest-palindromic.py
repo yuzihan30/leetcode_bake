@@ -52,3 +52,43 @@ if __name__ == '__main__':
   solution = Solution()
   return_value = solution.longestPalindrome('ba')
   print(return_value)
+
+
+"""
+中心扩散法
+"""
+
+  class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        size = len(s)
+        if size < 2:
+            return s
+        
+        # 易错点2
+        # 定义并初始化最长子串及其长度
+        longest_palindrome = s[0]
+        max_len = 1
+
+        for i in range(size):
+            odd_palindrome, odd_len = self.center_spread(s, size, i, i + 1)
+            even_palindrome, even_len = self.center_spread(s, size, i, i)
+            longer_palindrome = odd_palindrome if odd_len > even_len else even_palindrome
+            if len(longer_palindrome) > max_len:
+                max_len = len(longer_palindrome)
+                longest_palindrome = longer_palindrome
+            
+        return longest_palindrome
+
+    # size作为入参的好处，循环调用时只需要在外部计算一次，提高了效率
+    def center_spread(self, s: str, size, left, right):
+        # 易错点1
+        i = left
+        j = right
+        # py中取字符串中的字符，使用索引即可
+        while i >= 0 and j < size and s[i] == s[j]:
+            # 易错点3 Python 中是没有 ++ 和 -- 的， python中的数字类型是不可变数据。也就是数字类型数据在 内存 中是不会发生改变，当变量值发生改变时，会新申请一块内存赋值为新值，然后将变量指向新的内存地址
+            # i--
+            # j++
+            i -= 1
+            j += 1
+        return s[i + 1: j], j - i - 1 
