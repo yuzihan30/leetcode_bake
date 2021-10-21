@@ -16,6 +16,6 @@ class Solution:
         # return False
 
         # 优化 operator.eq(a, b)，a、b可以数字、字符串、列表 等价于"=="
-        # return str(x) == str(x)[::-1]
         # return operator.eq(list(str(x)), list(str(x)[::-1]))
-        return operator.eq(str(x), str(x)[::-1])
+        # return operator.eq(str(x), str(x)[::-1])
+        return str(x) == str(x)[::-1]

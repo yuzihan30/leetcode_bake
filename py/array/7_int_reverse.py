@@ -16,16 +16,16 @@ class Solution:
         return 0 if x < -2**31 or x > 2**31-1 else x
 
 
-class Solution:
-    def reverse(self, x: int) -> int:
-        # 方法：除数余数法
-        # 1. 初始化
-        flag = -1 if x < 0 else 1 # 关键点：1非负-1负
-        x = abs(x)
-        res = 0
-        # 2. 数学逻辑处理
-        while x:
-            res = res*10 + x%10
-            x //= 10
-        res = flag * res
-        return 0 if res < -2**31 or res > 2**31 - 1  else res
+# class Solution:
+#     def reverse(self, x: int) -> int:
+#         # 方法：除数余数法
+#         # 1. 初始化
+#         flag = -1 if x < 0 else 1 # 关键点：1非负-1负
+#         x = abs(x)
+#         res = 0
+#         # 2. 数学逻辑处理
+#         while x:
+#             res = res*10 + x%10
+#             x //= 10
+#         res = flag * res
+#         return 0 if res < -2**31 or res > 2**31 - 1  else res

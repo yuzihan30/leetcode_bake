@@ -22,3 +22,5 @@ class Solution:
             return min(max(int_s, -2**31), 2**31 - 1)
         except: 
             return 0
+
+        
