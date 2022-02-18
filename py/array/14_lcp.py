@@ -7,7 +7,7 @@ class Solution:
     """
     14. 最长公共前缀
     """
-    def longestCommonPrefix(self, strs) -> str:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         # 思路：解法比较多，时间复杂度基本都为O(mn)级别，这里使用横向扫描，对应还有纵向扫描法。
         # 核心思想就是集合交集满足结合律
         # 1. 初始化
