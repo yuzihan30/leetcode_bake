@@ -1,4 +1,13 @@
 '''
+Author: your name
+Date: 2021-10-12 15:03:44
+LastEditTime: 2022-03-21 09:43:08
+LastEditors: your name
+Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+FilePath: /leetcode_bake/py/array/find_median.py
+'''
+'''
+4. 寻找两个正序数组的中位数
 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
 参考思路：
 https://www.bilibili.com/video/BV1H5411c7oC

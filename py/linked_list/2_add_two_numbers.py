@@ -1,3 +1,11 @@
+'''
+Author: your name
+Date: 2021-10-12 15:03:44
+LastEditTime: 2022-03-21 08:26:02
+LastEditors: your name
+Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+FilePath: /leetcode_bake/py/linked_list/2_add_two_numbers.py
+'''
 """
 2. 两数相加
 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能
@@ -25,7 +33,7 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         # 2.2（关键点） 定义虚拟指针和当前指针，并同时指向初始化默认值为0的节点，该节点也是
         # 结果链表的头节点。dummy用于返回最后计算结果列表
-        # 注意点：创建新节点不用new关键词，区别与其他变成语言
+        # 注意点：创建新节点不用new关键词，区别与其他编程语言
         dummy = curr = ListNode()
         # 2.3 定义并初始化进位
         carry = 0

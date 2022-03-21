@@ -1,9 +1,17 @@
 '''
-无重复字符的最长子串
+Author: your name
+Date: 2021-10-12 15:03:44
+LastEditTime: 2022-03-21 09:39:26
+LastEditors: your name
+Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+FilePath: /leetcode_bake/py/hash/3_longest_subtring.py
+'''
+'''
+3. 无重复字符的最长子串
 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
 审题：
-1、子串是连续的，区别于子序列
-2、无重复字符
+a、子串是连续的，区别于子序列
+b、无重复字符
 '''
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -17,6 +25,8 @@ class Solution:
         # for idx, single_char in enumerate(str):
         for idx, single_char in enumerate(s):
             # 5. 重复出现的判断 易错点：python中的逻辑与、按位与其他语言的区别
+            # last_occurence[single_char] >= low可以排除掉low之前和single_char相同的情况，
+            # 这种情况之前计算过
             if single_char in last_occurence and last_occurence[single_char] >= low:
                 # 6. 更新慢指针（左指针）
                 low = last_occurence[single_char] + 1
