@@ -1,11 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-作者：yuzihan
-日期：2022年02月14日
-"""
 class Solution:
     """
     14. 最长公共前缀
+编写一个函数来查找字符串数组中的最长公共前缀。
+如果不存在公共前缀，返回空字符串 ""。
+示例 1：
+输入：strs = ["flower","flow","flight"]
+输出："fl"
+示例 2：
+输入：strs = ["dog","racecar","car"]
+输出：""
+解释：输入不存在公共前缀。
     """
     def longestCommonPrefix(self, strs: List[str]) -> str:
         # 思路：解法比较多，时间复杂度基本都为O(mn)级别，这里使用横向扫描，对应还有纵向扫描法。

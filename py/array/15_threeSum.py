@@ -1,12 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-作者：yuzihan
-日期：2022年02月18日
-"""
-
 from typing import List
-
-
 class Solution:
     """
     15. 三数之和
@@ -57,6 +49,3 @@ class Solution:
 if __name__ == '__main__':
     solution = Solution()
     print(solution.threeSum([-1, 0, 1, 2, -1, -4]))
-
-
-

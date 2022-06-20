@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-作者：yuzihan
-日期：2022年02月23日
-"""
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -11,6 +6,7 @@
 class Solution:
     """
     19. 删除链表的倒数第 N 个结点
+    给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
     """
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         # 思路：三种方法，1、暴力法，遍历到第L-n+1个节点 2、压栈出栈 3、双指针，快慢指针法
