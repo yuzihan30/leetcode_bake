@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-作者：yuzihan
-日期：2022年02月23日
-"""
-
 # Definition of singly-linked list
 # class listNode:
 #     def __init__(self, value=0, next=None):
@@ -19,6 +13,8 @@
 class Solution:
     """
     21. 合并两个有序链表
+    将两个升序链表合并为一个新的 升序 链表并返回。
+    新链表是通过拼接给定的两个链表的所有节点组成的。 
     """
 
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:

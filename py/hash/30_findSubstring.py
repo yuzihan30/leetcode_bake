@@ -1,11 +1,3 @@
-'''
-Author: your name
-Date: 2022-03-26 17:27:52
-LastEditTime: 2022-03-26 17:27:59
-LastEditors: your name
-Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-FilePath: /leetcode_bake/py/hash/30_findSubstring.py
-'''
 class Solution:
     """
     30. 串联所有单词的子串

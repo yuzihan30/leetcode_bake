@@ -1,11 +1,3 @@
-'''
-Author: your name
-Date: 2022-04-06 12:40:26
-LastEditTime: 2022-04-06 12:55:43
-LastEditors: Please set LastEditors
-Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-FilePath: /leetcode_bake/py/array/39_combinationSum.py
-'''
 class Solution:
     """
     39. 组合总和

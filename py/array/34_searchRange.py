@@ -1,14 +1,9 @@
-'''
-Author: your name
-Date: 2022-03-27 12:34:29
-LastEditTime: 2022-03-27 12:34:33
-LastEditors: your name
-Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-FilePath: /leetcode_bake/py/array/34_searchRange.py
-'''
 class Solution:
     """
     34. 在排序数组中查找元素的第一个和最后一个位置
+给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。
+如果数组中不存在目标值 target，返回 [-1, -1]。
+你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。
     """
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         # 思路： 二分查找，关键是怎么在无重复元素二分查找基础上修改

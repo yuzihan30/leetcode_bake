@@ -1,14 +1,11 @@
-'''
-Author: your name
-Date: 2022-03-08 22:27:52
-LastEditTime: 2022-03-08 22:28:07
-LastEditors: your name
-Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-FilePath: /leetcode_bake/py/array/26_removeDuplicates.py
-'''
 class Solution:
     """
     26. 删除有序数组中的重复项
+给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，
+返回删除后数组的新长度。元素的 相对顺序 应该保持 一致。由于在某些语言中不能改变数组的长度，
+所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，
+那么 nums 的前 k 个元素应该保存最终结果。将最终结果插入 nums 的前 k 个位置后返回 k 。
+不要使用额外的空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
     """
     def removeDuplicates(self, nums: List[int]) -> int:
         # 思路：双指针法（快慢指针），快指针遇到和前面值不同的就填充到慢指针的位置
