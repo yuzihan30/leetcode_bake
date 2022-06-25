@@ -1,11 +1,3 @@
-'''
-Author: your name
-Date: 2022-03-07 19:50:53
-LastEditTime: 2022-03-07 19:51:50
-LastEditors: your name
-Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-FilePath: /leetcode_bake/py/linked_list/206_reverseList.py
-'''
 """
 206. 反转链表
 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表
