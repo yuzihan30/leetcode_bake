@@ -12,7 +12,7 @@ class Solution:
         res = []
 
         # 2. 遍历处理，关键点，外层是while循环比较特殊，终止条件为True，靠内部break中断
-        while True:
+        while True: 
             for i in range(l, r+1):
                 res.append(matrix[t][i])
             t = t + 1
